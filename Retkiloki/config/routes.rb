@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :venues
+
+  resources :types
+
+  resources :age_groups
+
+  resources :attendances
+
   resources :events
 
   resources :users
