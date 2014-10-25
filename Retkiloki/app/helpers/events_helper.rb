@@ -5,14 +5,12 @@ module EventsHelper
 			return "Too many attendees"
 		end
 		fullTimeAttendances = 0
-		partTimeAttendances = 0
 		partTimeDays = 0
 		for i in attendees
-			if (i.enddate = @event.enddate && i.startdate == @event.startdate)
-				fullTimeAttendances = fullTimeAttendances + 1
+			if (i.enddate == @event.enddate && i.startdate == @event.startdate)
+				fullTimeAttendances += 1
 			else
-				partTimeAttendances = partTimeAttendances + 1
-				partTimeDays += ( i.enddate - i.startdate).to_int
+				partTimeDays += ( i.enddate - i.startdate ).to_int
 			end
 		end
 		if((@event.enddate - @event.startdate) < 0 || @event.attendees == nil || @event.attendees < 1)
