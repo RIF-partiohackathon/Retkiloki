@@ -2,7 +2,7 @@
 
 <h1>Listing Age Groups</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Group</th>
@@ -14,9 +14,9 @@
     <% @age_groups.each do |age_group| %>
       <tr>
         <td><%= age_group.group %></td>
-        <td><%= link_to 'Show', age_group %></td>
-        <td><%= link_to 'Edit', edit_age_group_path(age_group) %></td>
-        <td><%= link_to 'Destroy', age_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', age_group, class: 'btn btn-default btn-xs' %></td>
+          <td><%= link_to 'Edit', edit_event_path(age_group), class: 'btn btn-warning btn-xs' %></td>
+          <td><%= link_to 'Destroy', age_group, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Age group', new_age_group_path %>
+<%= link_to 'New Age group', new_age_group_path, class:'btn btn-primary' %>
