@@ -28,8 +28,7 @@
       <%= f.number_field :attendees %>
     </div>
     <div class="field">
-	    <%= f.label :type%>
-	    <%= f.select :type_id, options_from_collection_for_select(@events, :id, :type)%>
+	    <%=f.select :type_id, options_from_collection_for_select(@types, :id, :name)%>
     </div>
     <div class="actions">
       <%= f.submit %>
