@@ -21,6 +21,8 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/1/edit
   def edit
+	  @users = User.all
+	  @events = Event.all
   end
 
   # POST /attendances

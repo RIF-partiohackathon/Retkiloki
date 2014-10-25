@@ -23,6 +23,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+	  @types = Type.all
   end
 
   # POST /events
