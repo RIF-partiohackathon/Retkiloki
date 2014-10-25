@@ -17,7 +17,7 @@ module EventsHelper
 		elsif((@event.enddate - @event.startdate) == 1)
 			return 	@event.attendees
 		elsif((@event.enddate - @event.startdate) > 1)
-			return attendees * (@event.enddate - @event.startdate)+parttimedays.to_int
+			return attendees * ((@event.enddate - @event.startdate)+parttimedays).to_int
 
 		end
 	end
