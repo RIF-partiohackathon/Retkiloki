@@ -23,5 +23,23 @@
   <strong>retkivuorokausia:</strong>
   <%= countdays() %>
 </p>
+
+<p>
+  <strong> Paikalla </strong>
+  <% @event.users.each do |f| %>
+  <%= f.name %> <br>
+      <%end%>
+</p>
+
+<p>
+  <%= form_for(@attendance) do |f| %>
+      <%= f.hidden_field :event_id %>
+      Name: <%= f.select :user_id, options_from_collection_for_select(@users, :id, :name)%>
+      Start Date: <%= f.date_select(:startdate, default: @event.startdate) %>
+      End Date: <%= f.date_select(:enddate, default: @event.enddate) %>
+      <%= f.submit %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event), class:'btn btn-info' %> |
 <%= link_to 'Back', events_path, class:'btn btn-primary' %>
