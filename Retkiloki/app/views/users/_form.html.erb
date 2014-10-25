@@ -21,8 +21,14 @@
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br>
   </div>
+
+  <div class="field">
+    <%= f.label :age_group %><br>
+    <%= f.select :age_group_id, options_from_collection_for_select(@age_groups, :id, :group) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
