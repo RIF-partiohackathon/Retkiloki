@@ -34,7 +34,7 @@
 <p>
   <strong> Paikalla </strong>
   <% @event.users.each do |f| %>
-  <%= f.name %> <br>
+  <%=link_to f.name, f %> <br>
       <%end%>
 </p>
 

@@ -17,10 +17,10 @@
     <% @attendances.each do |attendance| %>
       <% if attendance.user %>  
         <tr>
-          <td><%= attendance.user.name%></td>
+          <td><%= link_to attendance.user.name, attendance.user%></td>
           <td><%= attendance.startdate %></td>
           <td><%= attendance.enddate %></td>
-          <td><%= attendance.event%></td>
+          <td><%= link_to attendance.event.name, attendance.event%></td>
           <td><%= link_to 'Show', attendance, class: 'btn btn-default btn-xs' %></td>
           <td><%= link_to 'Edit', edit_attendance_path(attendance), class: 'btn btn-warning btn-xs' %></td>
           <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%></td>
