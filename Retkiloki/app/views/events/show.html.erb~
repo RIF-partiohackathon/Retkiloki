@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Name:</strong>
+    <%= @event.name %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @event.startdate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @event.enddate %>
+</p>
+
+<p>
+  <strong>Attendees:</strong>
+  <%= @event.attendees %>
+</p>
+<p>
+  <strong>retkivuorokausia:</strong>
+  <%= countdays(@event) %>
+</p>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
