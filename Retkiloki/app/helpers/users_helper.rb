@@ -1,7 +1,7 @@
 module UsersHelper
 	def getdays()
 		days = 0
-		for i in @user.events
+		for i in @user.attendances
 			if ((i.enddate - i.startdate) == 1)
 				days = days + 1
 			elsif((i.enddate - i.startdate)-1 > 1)	
