@@ -15,6 +15,8 @@ class AttendancesController < ApplicationController
   # GET /attendances/new
   def new
     @attendance = Attendance.new
+    @events = Event.all
+    @users = User.all
   end
 
   # GET /attendances/1/edit
