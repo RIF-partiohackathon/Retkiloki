@@ -15,5 +15,17 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Age group:</strong>
+  <%= @user.age_group.group %>
+</p>
+
+<p>
+  <strong>Events:</strong>
+  <% @user.events.each do |f| %>
+  <%= f.name %>
+      <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

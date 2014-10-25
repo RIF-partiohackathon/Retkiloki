@@ -2,7 +2,7 @@
 
 <h1>Listing Events</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,9 +20,9 @@
         <td><%= event.startdate %></td>
         <td><%= event.enddate %></td>
         <td><%= event.attendees %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', event, class: 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), class: 'btn btn-warning btn-xs' %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path, class:'btn btn-primary' %>

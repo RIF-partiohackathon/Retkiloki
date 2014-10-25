@@ -1,4 +1,4 @@
-<p id="notice" class="bg-success"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
 <p>
     <strong>Name:</strong>
@@ -21,7 +21,7 @@
 </p>
 <p>
   <strong>retkivuorokausia:</strong>
-  <%= countdays() %>
+  <%= countdays(@event) %>
 </p>
-<%= link_to 'Edit', edit_event_path(@event), class:'btn btn-info' %> |
-<%= link_to 'Back', events_path, class:'btn btn-primary' %>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
