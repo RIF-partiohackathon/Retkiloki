@@ -2,7 +2,7 @@
 
 <h1>Listing Types</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Type</th>
@@ -17,9 +17,9 @@
       <tr>
         <td><%= type.name %></td>
         <td><%= type.in_woods %></td>
-        <td><%= link_to 'Show', type %></td>
-        <td><%= link_to 'Edit', edit_type_path(type) %></td>
-        <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', type, class: 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_type_path(type), class: 'btn btn-warning btn-xs' %></td>
+        <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%></td>
       </tr>
 
     <% end %>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Type', new_type_path %>
+<%= link_to 'New Type', new_type_path, class:'btn btn-primary' %>
