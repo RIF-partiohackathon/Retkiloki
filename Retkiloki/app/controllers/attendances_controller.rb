@@ -15,6 +15,8 @@ class AttendancesController < ApplicationController
   # GET /attendances/new
   def new
     @attendance = Attendance.new
+    @events = Event.all
+    @users = User.all
   end
 
   # GET /attendances/1/edit
@@ -69,6 +71,6 @@ class AttendancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
-      params.require(:attendance).permit(:startdate, :enddate)
+      params.require(:attendance).permit(:startdate, :enddate, :user_id, :event_id)
     end
 end

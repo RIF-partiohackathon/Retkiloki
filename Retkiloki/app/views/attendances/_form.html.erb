@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+<form class="form-horizontal" role="form">
+  <div class="field">
+       <%= f.select :user_id, options_from_collection_for_select(@users, :id, :name)%>
+  </div>
+
   <div class="field">
     <%= f.label :startdate %><br>
     <%= f.date_select :startdate %>
@@ -19,7 +24,14 @@
     <%= f.label :enddate %><br>
     <%= f.date_select :enddate %>
   </div>
+
+  <div class="field">
+    <%= f.select :event_id, options_from_collection_for_select(@events, :id, :name)%>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
+</form>
 <% end %>
