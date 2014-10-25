@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.date :startdate
       t.date :enddate
       t.integer :attendees
-
+      t.type :type
       t.timestamps null: false
     end
   end
