@@ -1,5 +1,5 @@
 class AddInWoodsToType < ActiveRecord::Migration
   def change
-    add_column :type, :inWoods ,:boolean
+    add_column :types, :in_woods , :boolean
   end
 end
