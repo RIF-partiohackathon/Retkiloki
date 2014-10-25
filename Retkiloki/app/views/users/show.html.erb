@@ -14,6 +14,7 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
 <% if @user.age_group %>
     <p>
       <strong>Age group:</strong>
@@ -26,6 +27,15 @@
   <% @user.events.each do |f| %>
   <%= f.name %>
       <% end %>
+</p>
+<p>
+   <strong>Number of events:</strong>
+   <%=@user.events.length %>
+</p>
+ 
+<p>
+   <strong>Days:</strong>
+   <%= getdays%>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
