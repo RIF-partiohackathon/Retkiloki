@@ -16,11 +16,8 @@ Käytetyt versiot
 Muistilista
 -----------
 
-- Kloonaa repo koneelle:
-       git clone https://github.com/RIF-partiohackathon/Retkiloki.git
+- Kloonaa repo koneelle: ```git clone https://github.com/RIF-partiohackathon/Retkiloki.git```
 - Siirry hakemistoon ./Retkiloki/Retkiloki
-- Aja:
-       bundle install
-- Koodaa
-- Testaa ajamalla:
-       rails s
+- Aja: ```bundle install```
+- Koodaa (valinnainen)
+- Testaa ajamalla: ```rails s```
