@@ -6,13 +6,13 @@ module EventsHelper
 		parttimedays = 0
 		for i in attendees
 			if (i.enddate = @event.enddate && i.startdate == @event.startdate)
-				fulltimeattendances = fulltimeattendances +1
+				fulltimeattendances = fulltimeattendances + 1
 			else
 				parttimeattendances = parttimeattendances + 1
-				parttimedays = parttimedays +( i.enddate - i.startdate)
+				parttimedays = parttimedays + ( i.enddate - i.startdate)
 			end
 		end
-		if((@event.enddate - @event.startdate) < 0 || @event.attendees <= 0)
+		if((@event.enddate - @event.startdate) < 0 || @event.attendees == nil || @event.attendees < 1)
 			return "You gave negative duration and/or zero attendees"
 		elsif((@event.enddate - @event.startdate) == 1)
 			return 	@event.attendees
