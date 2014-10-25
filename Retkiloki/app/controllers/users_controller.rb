@@ -10,15 +10,18 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @age_groups = AgeGroup.all
   end
 
   # GET /users/new
   def new
     @user = User.new
+    @age_groups = AgeGroup.all
   end
 
   # GET /users/1/edit
   def edit
+    @age_groups = AgeGroup.all
   end
 
   # POST /users
