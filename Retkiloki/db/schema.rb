@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025071903) do
+ActiveRecord::Schema.define(version: 20141025104720) do
 
   create_table "age_groups", force: true do |t|
     t.string   "group"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20141025071903) do
     t.date     "enddate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "event_id"
   end
 
   create_table "events", force: true do |t|
