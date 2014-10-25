@@ -13,12 +13,12 @@
 
 <p>
   <strong>Event:</strong>
-  <%= @attendance.event.name %>
+  <%= link_to @attendance.event.name, @attendance.event %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @attendance.user.name %>
+  <%= link_to @attendance.user.name, @attendance.user %>
 </p>
 
 
