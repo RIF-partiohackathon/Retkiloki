@@ -14,11 +14,12 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-
-<p>
-  <strong>Age group:</strong>
-  <%= @user.age_group.group %>
-</p>
+<% if @user.age_group %>
+    <p>
+      <strong>Age group:</strong>
+      <%= @user.age_group.group %>
+    </p>
+<% end %>
 
 <p>
   <strong>Events:</strong>
