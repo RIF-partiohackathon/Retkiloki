@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Age Group</th>
       <th>Phone</th>
       <th>Email</th>
       <th colspan="3"></th>
@@ -16,6 +17,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= user.age_group.group %></td>
         <td><%= user.phone %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user, class: 'btn btn-default btn-xs' %></td>
