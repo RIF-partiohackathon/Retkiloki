@@ -16,9 +16,9 @@
       <tr>
         <td><%= attendance.startdate %></td>
         <td><%= attendance.enddate %></td>
-          <td><%= link_to 'Show', event, class: 'btn btn-default btn-xs' %></td>
-          <td><%= link_to 'Edit', edit_event_path(event), class: 'btn btn-warning btn-xs' %></td>
-          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%></td>
+          <td><%= link_to 'Show', attendance, class: 'btn btn-default btn-xs' %></td>
+          <td><%= link_to 'Edit', edit_attendance_path(attendance), class: 'btn btn-warning btn-xs' %></td>
+          <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%></td>
       </tr>
     <% end %>
   </tbody>

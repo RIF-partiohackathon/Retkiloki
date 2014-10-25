@@ -15,7 +15,7 @@
       <tr>
         <td><%= age_group.group %></td>
           <td><%= link_to 'Show', age_group, class: 'btn btn-default btn-xs' %></td>
-          <td><%= link_to 'Edit', edit_event_path(age_group), class: 'btn btn-warning btn-xs' %></td>
+          <td><%= link_to 'Edit', edit_age_group_path(age_group), class: 'btn btn-warning btn-xs' %></td>
           <td><%= link_to 'Destroy', age_group, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%></td>
       </tr>
     <% end %>
