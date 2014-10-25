@@ -14,14 +14,21 @@
   <strong>Enddate:</strong>
   <%= @event.enddate %>
 </p>
-
 <p>
-  <strong>Attendees:</strong>
+  <strong>Duration:</strong>
+  <%= ((@event.enddate - @event.startdate).to_int).to_s+" days"%>
+</p>
+<p>
+  <strong>Max attendees:</strong>
   <%= @event.attendees %>
 </p>
 <p>
+  <strong>Attendees:</strong>
+  <%= (Attendance.where(event_id = @event_id)).length %>
+</p>
+<p>
   <strong>retkivuorokausia:</strong>
-  <%= countdays() %>
+  <%= countdays(@event.attendees.to_int) %>
 </p>
 
 <p>
