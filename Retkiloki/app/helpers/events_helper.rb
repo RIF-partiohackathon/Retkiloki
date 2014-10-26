@@ -1,29 +1,29 @@
 module EventsHelper
-	def countdays(maxAttendees) #counts total days
-		attendees = Attendance.where(event_id = @event_id)
-    if !attendees.nil? && !maxAttendees.nil?
-		if (maxAttendees < attendees)
-			return "Too many attendees"
-    end
 
-		fullTimeAttendances = 0
-		partTimeDays = 0
-		for i in attendees
-			if (i.enddate == @event.enddate && i.startdate == @event.startdate)
-				fullTimeAttendances += 1
-			else
-				partTimeDays += ( i.enddate - i.startdate ).to_int
-			end
-		end
-		if((@event.enddate - @event.startdate) < 0 || @event.attendees == nil || @event.attendees < 1)
-			return "You gave negative duration and/or zero attendees"
-		elsif((@event.enddate - @event.startdate) == 1)
-			return 	attendees.length
-		elsif((@event.enddate - @event.startdate) > 1)
-			return attendees.length * ((@event.enddate - @event.startdate)-partTimeDays).to_int
+  def countdays()
+    #counts total days
+    attendees = Attendance.where(event_id = @event.id)
+    days = 0
+    if !attendees.nil?
+      attendees.each do |i|
+          tmpdays = (i.enddate - i.startdate)
+            if tmpdays <= 1
+              days +=1
+            else
+              days += (tmpdays - 1)
+            end
+      end
+      tmpattendees = @event.attendees - attendees.size;
+    else
+      tmpattendees = @event.attendees
+    end
+    tmpdays = tmpattendees * (@event.enddate - @event.startdate)
+    if tmpdays <= 1
+      days +=1
+    else
+      days += (tmpdays - 1)
+    end
+    return days
+  end
 
-		end
-    end
-    return "This shit's wack"
-    end
 end
