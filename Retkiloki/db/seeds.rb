@@ -22,4 +22,4 @@ Event.create([{ name: 'Päiväretki', startdate: '1.10.2014', enddate: '1.10.201
 Event.create([{ name: '2 yön retki', startdate: '1.10.2014', enddate: '3.10.2014'}])
 Event.create([{ name: '6 päivän leiri', startdate: '10.10.2014', enddate: '16.10.2014'}])
 
-Type.create([{ name: 'pt_kisat_muu', in_woods true }, { name: 'pt_kisat_pm', in_woods true }, { name: 'pt_kisat_sm', in_woods true }, { name: 'leiri', in_woods true }, { name: 'pitka_vaellus', in_woods true }]) # Pakollinen, muuten Userin view kaatuu.
+Type.create([{ name: 'pt_kisat_muu', in_woods: true }, { name: 'pt_kisat_pm', in_woods: true }, { name: 'pt_kisat_sm', in_woods: true }, { name: 'leiri', in_woods: true }, { name: 'pitka_vaellus', in_woods: true }]) # Pakollinen, muuten Userin view kaatuu.
