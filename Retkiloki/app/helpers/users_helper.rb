@@ -17,13 +17,15 @@ module UsersHelper
 		pt_kisat_pm = 0
 		pt_kisat_muu = 0
 		leirit = 0
+		pitka_vaellus = 0
  
-		@user.attendances.each do |perso|
-			metsayoRetket += 1 if (perso.enddate - perso.startdate) > 0
-			pt_kisat_sm += 1 if perso.attendances.event.type == pt_kisat_sm
-			pt_kisat_pm += 1 if perso.attendances.event.type == pt_kisat_pm
-			pt_kisat_muu += 1 if perso.attendances.event.type == pt_kisat_muu
-			leirit += 1 if perso.attendances.event.type == leiri
+		@user.attendances.each do |atte|
+			metsayoRetket += 1 if (atte.enddate - atte.startdate) > 0
+			pt_kisat_sm += 1 if atte.attendances.event.type == pt_kisat_sm
+			pt_kisat_pm += 1 if atte.attendances.event.type == pt_kisat_pm
+			pt_kisat_muu += 1 if atte.attendances.event.type == pt_kisat_muu
+			leirit += 1 if atte.attendances.event.type == leiri
+			pitka_vaellus += 1 if atte.attendances.type == pitka_vaellus
 		end
  
 		if pitka_vaellus && metsayoRetket > 24 && leirit > 9 && (pt_kisat_sm+pt_kisat_sm+pt_kisat_muu) > 9 && pt_kisat_sm
