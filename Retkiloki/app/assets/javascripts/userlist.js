@@ -9,6 +9,8 @@ var ikaluokat = {
     "Aikuiset": 0
 }
 
+var lastClicked = {};
+
 USERS.show = function() {
     $("#usertable tr:gt(0)").remove();
 
@@ -45,14 +47,28 @@ $(document).ready(function () {
 
     $("#name").click(function (e) {
         USERS.sort_by_name();
+        if (lastClicked == "#name") {
+            USERS.list.reverse();
+            lastClicked = "Hanki pliis vaikka elämä..."
+        } else {
+            lastClicked = "#name";
+        };
         USERS.show();
         e.preventDefault();
+        console.log(lastClicked);
     });
 
     $("#age_group").click(function (e) {
         USERS.sort_by_age_group();
+        if (lastClicked == "#age_group") {
+            USERS.list.reverse();
+            lastClicked = "Senkin vähä-älyinen konsolia tuijottava kojootti!"
+        } else {
+            lastClicked = "#age_group";
+        };
         USERS.show();
         e.preventDefault();
+        console.log(lastClicked);
     });
 
     $.getJSON('users.json', function (users) {
