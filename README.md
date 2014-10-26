@@ -21,3 +21,11 @@ Muistilista
 - Aja: ```bundle install```
 - Koodaa (valinnainen)
 - Testaa ajamalla: ```rails s```
+
+Todo
+----
+
+- [ ] Jänkäsusi koostesivu
+- [ ] Raportin koostaminen
+- [ ] Köh testit köh..
+- [ ] Kirjautuminen
