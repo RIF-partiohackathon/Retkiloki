@@ -1,5 +1,14 @@
 var USERS = {};
 
+var ikaluokat = {
+    "Sudenpennut": 5,
+    "Seikkalijat": 4,
+    "Tarpojat": 3,
+    "Samoajat": 2,
+    "Vaeltajat": 1,
+    "Aikuiset": 0
+}
+
 USERS.show = function() {
     $("#usertable tr:gt(0)").remove();
 
@@ -8,7 +17,7 @@ USERS.show = function() {
     $.each(USERS.list, function (index, user) {
         table.append('<tr>'
             +'<td>' + user['name'] + '</td>'
-            +'<td>' + user['age_group'] + '</td>'
+            +'<td>' + user['age_group']['group'] + '</td>'
             +'<td>' + user['phone'] + '</td>'
             +'<td>' + user['email'] + '</td>'
         +'</tr>');
@@ -23,9 +32,25 @@ USERS.sort_by_name = function() {
     });
 };
 
+USERS.sort_by_age_group = function() {
+    USERS.list.sort(function(a,b){
+        return ikaluokat[a.age_group.group] < ikaluokat[b.age_group.group];
+    });
+};
+
+
+
+
 $(document).ready(function () {
-    $("#reverse").click(function (e) {
-        USERS.reverse();
+
+    $("#name").click(function (e) {
+        USERS.sort_by_name();
+        USERS.show();
+        e.preventDefault();
+    });
+
+    $("#age_group").click(function (e) {
+        USERS.sort_by_age_group();
         USERS.show();
         e.preventDefault();
     });
